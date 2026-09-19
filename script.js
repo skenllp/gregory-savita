@@ -1,5 +1,5 @@
 /* ============================================================
-   GREGORY & SAVITA — WEDDING INVITATION
+   GREGORY & LILLY — WEDDING INVITATION
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
