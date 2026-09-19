@@ -487,40 +487,27 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
 .personpage .person-head{margin-bottom:26px;}
 .personpage .person-head .divider{margin-top:14px;background:linear-gradient(90deg, transparent, var(--gold-deep), transparent);}
 
-.person-portrait-wrap{
-  position:relative;
-  width:78%;
-  max-width:300px;
-  margin-bottom:30px;
+/* The Couple — text-only family details */
+#couple .content{justify-content:center;flex:1;}
+.family-card{text-align:center;padding:6px 10px;}
+.family-card .who{
+  font-family:var(--font-label);
+  font-size:10.5px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+  margin-bottom:10px;
 }
-.person-portrait{
-  position:relative;
-  overflow:hidden;
-  aspect-ratio:4/5.1;
-  border:1px solid rgba(143,110,52,0.55);
-  border-radius:150px 150px 6px 6px;
-  box-shadow:0 18px 40px -18px rgba(46,42,34,0.35);
-}
-.person-portrait img{
-  width:100%;height:100%;object-fit:cover;object-position:center 18%;
-}
-.person-portrait::after{
-  content:'';
-  position:absolute;inset:0;
-  box-shadow:inset 0 0 0 1px rgba(198,161,91,0.25);
-  border-radius:inherit;
-  pointer-events:none;
-}
-.person-info .person-name{
+.family-card .family-name{
   font-family:var(--font-display);
   font-style:italic;
   font-weight:600;
   font-size:26px;
-  letter-spacing:0.03em;
+  letter-spacing:0.02em;
   color:var(--charcoal);
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
-.person-info .person-parent{
+.family-card .family-parent{
   font-family:var(--font-body);
   font-style:italic;
   font-size:16px;
@@ -528,8 +515,10 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   color:var(--charcoal-soft);
   margin-bottom:8px;
   max-width:280px;
+  margin-left:auto;
+  margin-right:auto;
 }
-.person-info .person-address{
+.family-card .family-address{
   font-family:var(--font-label);
   font-size:10.5px;
   letter-spacing:0.2em;
@@ -537,13 +526,13 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   color:var(--gold-deep);
   line-height:1.8;
 }
-
-/* Groom — centered portrait, warm ivory */
-#groom{background:var(--ivory);}
-
-/* Bride — complementary rounded corners, deeper cream, still centered */
-#bride{background:var(--ivory-deep);}
-#bride .person-portrait{border-radius:6px 6px 150px 150px;}
+.family-divider{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  color:var(--gold-deep);
+  font-family:var(--font-display);font-style:italic;font-size:18px;
+  margin:8px 0 26px;
+}
+.family-divider .ln{width:30px;height:1px;background:var(--gold-deep);opacity:.6;}
 
 /* Together — emotional centerpiece */
 #together{background:var(--champagne);}
@@ -588,7 +577,6 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
 }
 
 @media (min-width:720px){
-  .person-portrait-wrap{width:300px;}
   #together .content{padding:0 40px;}
 }
 
@@ -1079,57 +1067,38 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   </section> -->
 
   <!-- ============================================================
-       04a — THE GROOM
+       04a — THE COUPLE (family details, text only)
   ============================================================ -->
-  <section class="page personpage" id="groom">
+  <section class="page personpage" id="couple">
     <div class="page-frame"></div>
     <div class="content">
       <div class="person-head reveal" style="--i:0">
-        <div class="eyebrow">The Groom</div>
+        <div class="eyebrow">The Couple</div>
         <div class="divider"></div>
       </div>
 
-      <div class="person-portrait-wrap reveal-portrait" style="--i:1">
-        <div class="person-portrait">
-          <img src="assets/groom.jpg" alt="Gregory Chacko, the groom">
-        </div>
+      <div class="family-card reveal" style="--i:1">
+        <div class="who">The Groom</div>
+        <div class="family-name">Gregory Chacko</div>
+        <div class="family-parent">S/o of Mr. Chacko Ck (Late) &amp; Mrs. Sumana Ca</div>
+        <div class="family-address">Chozhiyattil House<br>Gramala West, Athani</div>
       </div>
 
-      <div class="person-info reveal" style="--i:2">
-        <div class="person-name">Gregory Chacko</div>
-        <div class="person-parent">S/o of Mr. Chacko Ck (Late) &amp; Mrs. Sumana Ca</div>
-        <div class="person-address">Chozhiyattil House<br>Gramala West, Athani</div>
+      <div class="family-divider reveal" style="--i:2">
+        <span class="ln"></span><span>&amp;</span><span class="ln"></span>
+      </div>
+
+      <div class="family-card reveal" style="--i:3">
+        <div class="who">The Bride</div>
+        <div class="family-name">Lilly Nirmal</div>
+        <div class="family-parent">D/o of Nirmal Kumar (Late) &amp; Mrs. Amarjit</div>
+        <div class="family-address">New Abadi Jallowal<br>Jalandhar</div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       04b — THE BRIDE
-  ============================================================ -->
-  <section class="page personpage" id="bride">
-    <div class="page-frame"></div>
-    <div class="content">
-      <div class="person-head reveal" style="--i:0">
-        <div class="eyebrow">The Bride</div>
-        <div class="divider"></div>
-      </div>
-
-      <div class="person-portrait-wrap reveal-portrait" style="--i:1">
-        <div class="person-portrait">
-          <img src="assets/bride.jpg" alt="Lilly, the bride">
-        </div>
-      </div>
-
-      <div class="person-info reveal" style="--i:2">
-        <div class="person-name">Lilly</div>
-        <div class="person-parent">D/o of Nirmal Kumar (Late) &amp; Mrs. Amarjit</div>
-        <div class="person-address">New Abadi Jallowal<br>Jalandhar</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       04c — TOGETHER
+       04b — TOGETHER
   ============================================================ -->
   <section class="page personpage" id="together">
     <div class="page-frame"></div>
