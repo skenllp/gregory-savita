@@ -511,16 +511,6 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   border-radius:inherit;
   pointer-events:none;
 }
-.botanical-leaf{
-  position:absolute;
-  width:46px;height:46px;
-  color:var(--gold);
-  opacity:0.8;
-  pointer-events:none;
-}
-.botanical-leaf.tl{top:-16px;left:-16px;transform:rotate(-8deg);}
-.botanical-leaf.br{bottom:-16px;right:-16px;transform:rotate(172deg);}
-
 .person-info .person-name{
   font-family:var(--font-display);
   font-style:italic;
@@ -548,16 +538,12 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   line-height:1.8;
 }
 
-/* Groom — portrait sits slightly left, warm ivory */
+/* Groom — centered portrait, warm ivory */
 #groom{background:var(--ivory);}
-#groom .person-portrait-wrap{margin-left:0;margin-right:auto;}
 
-/* Bride — complementary mirrored composition, deeper cream */
+/* Bride — complementary rounded corners, deeper cream, still centered */
 #bride{background:var(--ivory-deep);}
 #bride .person-portrait{border-radius:6px 6px 150px 150px;}
-#bride .person-portrait-wrap{margin-left:auto;margin-right:0;}
-#bride .botanical-leaf.tl{top:-16px;right:-16px;left:auto;transform:rotate(96deg) scaleX(-1);}
-#bride .botanical-leaf.br{bottom:-16px;left:-16px;right:auto;transform:rotate(-98deg) scaleX(-1);}
 
 /* Together — emotional centerpiece */
 #together{background:var(--champagne);}
@@ -602,13 +588,8 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
 }
 
 @media (min-width:720px){
-  .personpage .content{flex-direction:row;align-items:center;justify-content:center;gap:52px;text-align:left;padding:0 40px;}
-  .personpage .person-head{position:absolute;top:70px;left:0;right:0;text-align:center;margin-bottom:0;}
-  .person-portrait-wrap{width:280px;flex:none;margin:0;}
-  #bride .content{flex-direction:row-reverse;}
-  .person-info{max-width:280px;}
-  .person-info .person-parent{max-width:none;}
-  #together .content{flex-direction:column;padding:0 40px;}
+  .person-portrait-wrap{width:300px;}
+  #together .content{padding:0 40px;}
 }
 
 /* ============================================================
@@ -1109,11 +1090,9 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
       </div>
 
       <div class="person-portrait-wrap reveal-portrait" style="--i:1">
-        <svg class="botanical-leaf tl" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
         <div class="person-portrait">
           <img src="assets/groom.jpg" alt="Gregory Chacko, the groom">
         </div>
-        <svg class="botanical-leaf br" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
       </div>
 
       <div class="person-info reveal" style="--i:2">
@@ -1136,11 +1115,9 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
       </div>
 
       <div class="person-portrait-wrap reveal-portrait" style="--i:1">
-        <svg class="botanical-leaf tl" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
         <div class="person-portrait">
           <img src="assets/bride.jpg" alt="Savita Nirmal, the bride">
         </div>
-        <svg class="botanical-leaf br" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
       </div>
 
       <div class="person-info reveal" style="--i:2">
