@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openBtn.setAttribute('role', 'button');
 
   /* ---------- SCROLL REVEAL ---------- */
-  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .reveal-portrait');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting){

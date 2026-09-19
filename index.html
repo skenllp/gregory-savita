@@ -8,16 +8,16 @@
 
 <!-- Open Graph / social share preview -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://gregory-savita.vercel.app/">
+<meta property="og:url" content="https://gregory-lilly.vercel.app/">
 <meta property="og:title" content="Gregory & Savita — 07.11.2026">
 <meta property="og:description" content="Together with their families, Gregory & Savita joyfully invite you to their wedding — 7th November 2026.">
-<meta property="og:image" content="https://gregory-savita.vercel.app/assets/og-image.jpg">
+<meta property="og:image" content="https://gregory-lilly.vercel.app/assets/og-image.jpg">
 <meta property="og:image:width" content="1672">
 <meta property="og:image:height" content="941">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gregory & Savita — 07.11.2026">
 <meta name="twitter:description" content="Together with their families, Gregory & Savita joyfully invite you to their wedding.">
-<meta name="twitter:image" content="https://gregory-savita.vercel.app/assets/og-image.jpg">
+<meta name="twitter:image" content="https://gregory-lilly.vercel.app/assets/og-image.jpg">
 <link rel="icon" href="assets/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -458,71 +458,158 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
 #story .story-body p:last-child{margin-bottom:0;}
 
 /* ============================================================
-   04 THE COUPLE
+   04 THE GROOM / THE BRIDE / TOGETHER  (photography sections)
    ============================================================ */
-#couple .bg-media{ object-position:center 30%; }
-#couple .bg-scrim{
-  background:linear-gradient(180deg, rgba(46,42,34,0.23) 0%, rgba(46,42,34,0.18) 26%, rgba(46,42,34,0.23) 55%, rgba(30,26,18,0.41) 100%);
+.reveal-portrait{
+  opacity:0;
+  transform:translateY(26px) scale(0.95);
+  transition:opacity 1.3s cubic-bezier(.22,.61,.36,1), transform 1.3s cubic-bezier(.22,.61,.36,1);
 }
-#couple .content{
-  padding-top:70px;
-  padding-bottom:60px;
-  justify-content:center;
-  gap:8px;
+.reveal-portrait.in{opacity:1;transform:translateY(0) scale(1);}
+
+.personpage{
+  background:var(--ivory);
+  min-height:100svh;
+  align-items:stretch;
+  justify-content:flex-start;
 }
-#couple .couple-head{
-  text-align:center;color:var(--ivory);margin-bottom:4px;
-}
-#couple .couple-head h2{
-  font-family:var(--font-display);font-style:italic;font-size:28px;margin:8px 0 4px;color:var(--ivory);
-  text-shadow:0 2px 8px rgba(0,0,0,0.8), 0 3px 20px rgba(0,0,0,0.6);
-}
-.couple-card{
+.personpage .page-frame{border-color:rgba(143,110,52,0.4);}
+.personpage .page-frame::before, .personpage .page-frame::after{border-color:var(--gold-deep);opacity:.7;}
+.personpage .content{
+  position:relative;z-index:2;
+  padding:86px 26px 74px;
+  display:flex;flex-direction:column;align-items:center;
   text-align:center;
-  color:var(--ivory);
-  padding:10px 16px 6px;
+  flex:1;
+  color:var(--charcoal);
 }
-.couple-card .who{
-  font-family:var(--font-label);
-  font-size:11px;
-  letter-spacing:0.35em;
-  text-transform:uppercase;
-  color:var(--gold-soft);
-  margin-bottom:8px;
-  text-shadow:0 2px 6px rgba(0,0,0,0.9), 0 3px 16px rgba(0,0,0,0.7);
+.personpage .eyebrow{color:var(--gold-deep);text-shadow:none;margin-bottom:6px;}
+.personpage .person-head{margin-bottom:26px;}
+.personpage .person-head .divider{margin-top:14px;background:linear-gradient(90deg, transparent, var(--gold-deep), transparent);}
+
+.person-portrait-wrap{
+  position:relative;
+  width:78%;
+  max-width:300px;
+  margin-bottom:30px;
 }
-.couple-card .name{
-  font-family:var(--font-script);
-  font-size:44px;
-  color:var(--ivory);
-  margin-bottom:8px;
-  text-shadow:0 3px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6);
+.person-portrait{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:4/5.1;
+  border:1px solid rgba(143,110,52,0.55);
+  border-radius:150px 150px 6px 6px;
+  box-shadow:0 18px 40px -18px rgba(46,42,34,0.35);
 }
-.couple-card .parent-line{
+.person-portrait img{
+  width:100%;height:100%;object-fit:cover;object-position:center 18%;
+}
+.person-portrait::after{
+  content:'';
+  position:absolute;inset:0;
+  box-shadow:inset 0 0 0 1px rgba(198,161,91,0.25);
+  border-radius:inherit;
+  pointer-events:none;
+}
+.botanical-leaf{
+  position:absolute;
+  width:46px;height:46px;
+  color:var(--gold);
+  opacity:0.8;
+  pointer-events:none;
+}
+.botanical-leaf.tl{top:-16px;left:-16px;transform:rotate(-8deg);}
+.botanical-leaf.br{bottom:-16px;right:-16px;transform:rotate(172deg);}
+
+.person-info .person-name{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-weight:600;
+  font-size:26px;
+  letter-spacing:0.03em;
+  color:var(--charcoal);
+  margin-bottom:12px;
+}
+.person-info .person-parent{
   font-family:var(--font-body);
   font-style:italic;
-  font-size:15.5px;
-  color:var(--champagne);
-  margin-bottom:6px;
-  line-height:1.5;
-  text-shadow:0 2px 10px rgba(0,0,0,0.8), 0 3px 18px rgba(0,0,0,0.6);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--charcoal-soft);
+  margin-bottom:8px;
+  max-width:280px;
 }
-.couple-card .address{
+.person-info .person-address{
   font-family:var(--font-label);
-  font-size:11px;
-  letter-spacing:0.16em;
+  font-size:10.5px;
+  letter-spacing:0.2em;
   text-transform:uppercase;
-  color:rgba(250,245,233,0.85);
-  line-height:1.7;
-  text-shadow:0 2px 10px rgba(0,0,0,0.8), 0 3px 18px rgba(0,0,0,0.6);
+  color:var(--gold-deep);
+  line-height:1.8;
 }
-.couple-divider{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  color:var(--gold-soft);
-  font-family:var(--font-display);font-style:italic;font-size:18px;
-  margin:4px 0;
+
+/* Groom — portrait sits slightly left, warm ivory */
+#groom{background:var(--ivory);}
+#groom .person-portrait-wrap{margin-left:0;margin-right:auto;}
+
+/* Bride — complementary mirrored composition, deeper cream */
+#bride{background:var(--ivory-deep);}
+#bride .person-portrait{border-radius:6px 6px 150px 150px;}
+#bride .person-portrait-wrap{margin-left:auto;margin-right:0;}
+#bride .botanical-leaf.tl{top:-16px;right:-16px;left:auto;transform:rotate(96deg) scaleX(-1);}
+#bride .botanical-leaf.br{bottom:-16px;left:-16px;right:auto;transform:rotate(-98deg) scaleX(-1);}
+
+/* Together — emotional centerpiece */
+#together{background:var(--champagne);}
+#together .content{padding-top:92px;}
+#together .together-head{margin-bottom:28px;}
+#together .together-head .amp-name{
+  font-family:var(--font-script);
+  font-size:40px;
+  color:var(--gold-deep);
+  line-height:1;
 }
-.couple-divider .ln{width:30px;height:1px;background:var(--gold);opacity:.7;}
+.together-frame{
+  position:relative;
+  width:100%;
+  max-width:340px;
+  aspect-ratio:3/3.7;
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow:0 22px 50px -20px rgba(46,42,34,0.4);
+}
+.together-frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.together-frame::before{
+  content:'';
+  position:absolute;inset:10px;
+  border:1px solid rgba(250,245,233,0.75);
+  pointer-events:none;
+}
+.together-linework{
+  width:120px;height:auto;
+  margin:26px auto 0;
+  color:var(--gold-deep);
+  opacity:0.85;
+}
+.together-quote{margin-top:18px;max-width:260px;}
+.together-quote p{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--charcoal-soft);
+  margin:0;
+}
+
+@media (min-width:720px){
+  .personpage .content{flex-direction:row;align-items:center;justify-content:center;gap:52px;text-align:left;padding:0 40px;}
+  .personpage .person-head{position:absolute;top:70px;left:0;right:0;text-align:center;margin-bottom:0;}
+  .person-portrait-wrap{width:280px;flex:none;margin:0;}
+  #bride .content{flex-direction:row-reverse;}
+  .person-info{max-width:280px;}
+  .person-info .person-parent{max-width:none;}
+  #together .content{flex-direction:column;padding:0 40px;}
+}
 
 /* ============================================================
    05 SAVE THE DATE
@@ -1011,34 +1098,80 @@ body[style*="overflow: hidden"] .page:not(#open):not(#hero){
   </section> -->
 
   <!-- ============================================================
-       04 — THE COUPLE
+       04a — THE GROOM
   ============================================================ -->
-  <section class="page imgpage theme-tuscan" id="couple">
+  <section class="page personpage" id="groom">
     <div class="page-frame"></div>
-    <img class="bg-media" src="assets/bg-tuscan.jpg" alt="Tuscan terrace overlooking the hilltop village at sunset">
-    <div class="bg-scrim"></div>
     <div class="content">
-      <div class="couple-head reveal" style="--i:0">
+      <div class="person-head reveal" style="--i:0">
+        <div class="eyebrow">The Groom</div>
+        <div class="divider"></div>
+      </div>
+
+      <div class="person-portrait-wrap reveal-portrait" style="--i:1">
+        <svg class="botanical-leaf tl" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
+        <div class="person-portrait">
+          <img src="assets/groom.jpg" alt="Gregory Chacko, the groom">
+        </div>
+        <svg class="botanical-leaf br" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+
+      <div class="person-info reveal" style="--i:2">
+        <div class="person-name">Gregory Chacko</div>
+        <div class="person-parent">S/o of Mr. Chacko Ck (Late) &amp; Mrs. Sumana Ca</div>
+        <div class="person-address">Chozhiyattil House<br>Gramala West, Athani</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04b — THE BRIDE
+  ============================================================ -->
+  <section class="page personpage" id="bride">
+    <div class="page-frame"></div>
+    <div class="content">
+      <div class="person-head reveal" style="--i:0">
+        <div class="eyebrow">The Bride</div>
+        <div class="divider"></div>
+      </div>
+
+      <div class="person-portrait-wrap reveal-portrait" style="--i:1">
+        <svg class="botanical-leaf tl" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
+        <div class="person-portrait">
+          <img src="assets/bride.jpg" alt="Savita Nirmal, the bride">
+        </div>
+        <svg class="botanical-leaf br" viewBox="0 0 48 48" fill="none"><path d="M24 4C14 10 8 20 8 30c0 6 4 10 10 10 8 0 16-8 16-22 0-6-4-11-10-14z" stroke="currentColor" stroke-width="1.1"/><path d="M24 8v30" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+
+      <div class="person-info reveal" style="--i:2">
+        <div class="person-name">Savita Nirmal <span style="font-size:0.6em;">(Lilly)</span></div>
+        <div class="person-parent">D/o of Nirmal Kumar (Late) &amp; Mrs. Amarjit</div>
+        <div class="person-address">New Abadi Jallowal<br>Jalandhar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04c — TOGETHER
+  ============================================================ -->
+  <section class="page personpage" id="together">
+    <div class="page-frame"></div>
+    <div class="content">
+      <div class="together-head reveal" style="--i:0">
         <div class="eyebrow">Chapter Two</div>
-        <h2>The Couple</h2>
+        <div class="amp-name">Gregory &amp; Savita</div>
       </div>
 
-      <div class="couple-card reveal" style="--i:1">
-        <div class="who">The Groom</div>
-        <div class="name">Gregory</div>
-        <div class="parent-line">S/o of Mr. Chacko Ck (Late) &amp; Mrs. Sumana Ca</div>
-        <div class="address">Chozhiyattil House<br>Gramala West, Athani</div>
+      <div class="reveal-scale" style="--i:1">
+        <div class="together-frame">
+          <img src="assets/together.jpg" alt="Gregory and Savita together">
+        </div>
       </div>
 
-      <div class="couple-divider reveal" style="--i:2">
-        <span class="ln"></span><span>&amp;</span><span class="ln"></span>
-      </div>
+      <svg class="together-linework reveal" style="--i:2" viewBox="0 0 120 20" fill="none"><path d="M2 10H46M74 10H118M60 10a8 8 0 1 1 0-0.01" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="10" r="5" stroke="currentColor" stroke-width="1"/></svg>
 
-      <div class="couple-card reveal" style="--i:3">
-        <div class="who">The Bride</div>
-        <div class="name">Savita <span style="font-size:0.55em;">(Lilly)</span></div>
-        <div class="parent-line">D/o of Nirmal Kumar (Late) &amp; Mrs. Amarjit</div>
-        <div class="address">New Abadi Jallowal<br>Jalandhar</div>
+      <div class="together-quote reveal" style="--i:3">
+        <p>&ldquo;Together, a beautiful journey begins.&rdquo;</p>
       </div>
     </div>
   </section>
